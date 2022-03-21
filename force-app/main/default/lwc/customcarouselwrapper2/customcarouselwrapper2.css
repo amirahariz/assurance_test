@@ -1,0 +1,48 @@
+:host {
+    position: relative;
+    display: block;
+    background-color: white;
+}
+
+img{
+    position: relative;
+    width: 100%;
+    background-color: white;
+
+}
+
+.c-hero-center-default,
+.c-hero-center-left {
+    top: 30%;
+    left: 10%;
+}
+
+.c-hero-center-right {
+    top: 30%;
+    left: 50%;
+}
+
+
+
+
+h1,
+p {
+    color: var(--lwc-colorTextButtonBrand, white);
+    font-family: "Comic Sans MS", Comic Sans MS;
+    margin-bottom: 10px;
+    font-weight: normal;
+    letter-spacing: 0.14em;
+    line-height: 1;
+    font-size: 2.5rem;
+    margin: 0.5em 0 0.74em;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+h1 {
+    letter-spacing: 0.03em;
+    line-height: 0.88;
+    margin: 0;
+    font-size: 3.5rem;
+    font-weight: bold;
+}
