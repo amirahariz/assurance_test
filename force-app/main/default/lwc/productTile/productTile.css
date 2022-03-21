@@ -1,7 +1,11 @@
 .content {
-    padding: 8px;
-    background-color: #ffffff;
+   
     border-radius: 0.25rem;
+    padding: 50px;
+    transition: transform .2s;
+    width: 250px;
+    height: 200px;
+    margin: 0 auto;
 }
 
 a {
@@ -22,3 +26,13 @@ img.product {
     font-weight: bold;
     text-transform: uppercase;
 }
+
+  
+  .content:hover {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.5); 
+  }
+  a{
+      text-decoration: none;
+  }
