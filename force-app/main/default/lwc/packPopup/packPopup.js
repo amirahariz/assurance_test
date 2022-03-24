@@ -8,8 +8,7 @@ import { getFieldValue } from 'lightning/uiRecordApi';
 // Pack__c Schema
 import NAME_FIELD from '@salesforce/schema/Pack__c.Name';
 import DESCRIPTION_FIELD from '@salesforce/schema/Pack__c.Description__c';
-import OBLIGATOIRE_FIELD from '@salesforce/schema/Pack__c.garanties_obligatoires__c';
-import COMPLEMENTAIRE_FIELD from '@salesforce/schema/Pack__c.garanties_complementaires__c';
+import GARANTIES_FIELD from '@salesforce/schema/Pack__c.garanties__c';
 import IMAGE_FIELD from '@salesforce/schema/Pack__c.Pack_Image__c';
 
 
@@ -28,8 +27,7 @@ export default class PackPopup extends LightningElement {
 
     nameField = NAME_FIELD;
     descriptionField = DESCRIPTION_FIELD;
-    obligatoireField = OBLIGATOIRE_FIELD;
-    complementaireField = COMPLEMENTAIRE_FIELD;
+    garantiesField = GARANTIES_FIELD;
     imageField = IMAGE_FIELD;
 
 
@@ -37,8 +35,8 @@ export default class PackPopup extends LightningElement {
 
     packName;
     packDescription;
-    packObligatoire;
-    packComplementaire;
+    packGaranties;
+    
     packImage;
 
     @wire(MessageContext) messageContext;
@@ -58,8 +56,7 @@ export default class PackPopup extends LightningElement {
         const recordData = records[this.recordId];
         this.packName = getFieldValue(recordData, NAME_FIELD);
         this.packDescription = getFieldValue(recordData, DESCRIPTION_FIELD);
-        this.packObligatoire = getFieldValue(recordData, OBLIGATOIRE_FIELD);
-        this.packComplementaire = getFieldValue(recordData, COMPLEMENTAIRE_FIELD);
+        this.packGaranties = getFieldValue(recordData, GARANTIES_FIELD);
         this.packImage = getFieldValue(recordData, IMAGE_FIELD);
 
     }
