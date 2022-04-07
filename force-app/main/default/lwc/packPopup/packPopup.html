@@ -1,4 +1,5 @@
 <template>
+    
     <template if:true={recordId}>
     <template if:true={showModal}>
         <section
@@ -34,21 +35,23 @@
                      <p>{packDescription}</p>
                  </slot>
                  <br/>
-                 <img
+                 
+                <img
                  src={packImage}
                  class="product slds-align_absolute-center"
                  alt="Product picture"
                  />
-                <!-- <table>
-                    <tr>
-                      <th>Les Garanties :</th>
+                
+               
+                      <h1>Les Garanties :</h1>
                       
-                    </tr>
-                    <tr>
-                      <td>{packGaranties}</td>
-                    </tr>
-                 </table> -->
-                 <lightning-output-field fieldna></lightning-output-field>
+                    
+                    
+                      <h2>{packGaranties}</h2>
+                      
+                    
+                
+                 
              </div>
              
 
@@ -56,7 +59,7 @@
          </lightning-record-view-form>
          
          </section>
-         <div class="slds-backdrops"></div>
+         <div class="slds-backdrop slds-backdrop_open"></div>
     </template>
 </template>
 <template if:false={recordId}>
@@ -87,8 +90,8 @@
          </div>
          
          </section>
-         <div class="slds-backdrops"></div>
+         
     </template>
+    
 </template>
-
 </template>

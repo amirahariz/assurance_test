@@ -1,27 +1,18 @@
 .modal-hidden{
     display: none;
 }
+.back{
+  background-color: lawngreen;
+}
 
 img {
 
-    height: 150px;
+    height: 300px;
     
-    max-width: initial;
+    width:300px;
     
     pointer-events: none;
     
     }
-
-    table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-      }
-      
-      td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-      }
       
       

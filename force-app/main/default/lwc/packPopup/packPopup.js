@@ -29,6 +29,7 @@ export default class PackPopup extends LightningElement {
     descriptionField = DESCRIPTION_FIELD;
     garantiesField = GARANTIES_FIELD;
     imageField = IMAGE_FIELD;
+    
 
 
     recordId;
@@ -36,6 +37,7 @@ export default class PackPopup extends LightningElement {
     packName;
     packDescription;
     packGaranties;
+    
     
     packImage;
 
@@ -58,6 +60,7 @@ export default class PackPopup extends LightningElement {
         this.packDescription = getFieldValue(recordData, DESCRIPTION_FIELD);
         this.packGaranties = getFieldValue(recordData, GARANTIES_FIELD);
         this.packImage = getFieldValue(recordData, IMAGE_FIELD);
+    
 
     }
 
