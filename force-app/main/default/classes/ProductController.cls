@@ -24,7 +24,7 @@ public with sharing class ProductController {
     @AuraEnabled(Cacheable=true)
     public static List<Pack__c> displayPackRecords(String prodId){
         List<Pack__c> packList = new List<Pack__c>();
-        for(Pack__c pack:[select Id,  Name, Description__c, garanties_obligatoires__c, garanties_complementaires__c, Pack_Image__c from Pack__c where Product__r.Id=:prodId]){
+        for(Pack__c pack:[select Id,  Name, Description__c, garanties__c, Pack_Image__c from Pack__c where Product__r.Id=:prodId]){
             packList.add(pack);
         }
         return packList;

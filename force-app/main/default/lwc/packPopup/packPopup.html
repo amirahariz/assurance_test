@@ -8,13 +8,17 @@
            aria-labelledby="modal-heading-01"
            aria-modal="true"
            aria-describedby="modal-content-id-1"
-           class="slds-modal slds-fade-in-open"
-        ><lightning-record-view-form
+           class="slds-modal slds-fade-in-open slds-modal_medium"
+           style="margin-bottom: 20%;"
+           
+        > 
+        <!--
+        <lightning-record-view-form
         record-id={recordId}
         onload={handleRecordLoaded}
         object-api-name="Pack__c"
         density="compact"
-    >
+         >
          <div class="slds-modal__container">
              <header class="slds-modal__header">
                  <lightning-button-icon 
@@ -56,7 +60,45 @@
              
 
          </div>
-         </lightning-record-view-form>
+         </lightning-record-view-form> -->
+         
+            <lightning-record-view-form record-id={recordId} onload={handleRecordLoaded} object-api-name="Pack__c" density="compact">
+                <div class="slds-modal__container" style="overflow: visible; overflow-y: visible;">
+                    <header class="slds-modal__header">
+                        <lightning-button-icon 
+                    class="slds-modal__close"
+                    title="Close"
+                    icon-name="utility:close"
+                    icon-class="slds-button_icon-inverse"
+                    onclick={handleDialogClose}>
+                </lightning-button-icon>
+                    
+                        <lightning-output-field field-name="Name"></lightning-output-field>
+                        <lightning-output-field field-name="Product__c"></lightning-output-field>
+                    </header>  
+                    <div
+                    class="slds-modal__content slds-p-around_medium"
+                    id="modal-content-id-1">
+                        
+
+                        <img
+                 src={packImage}
+                 class="product slds-align_absolute-center"
+                 alt="Product picture"
+                 />
+                    
+                    <div class="slds-col">
+                        <lightning-output-field field-name="Description__c"></lightning-output-field>
+
+                        <lightning-output-field field-name="garanties__c"></lightning-output-field>
+                        
+                    </div>
+                    <br><br>
+                </div>  
+
+                </div>
+                </lightning-record-view-form>
+            
          
          </section>
          <div class="slds-backdrop slds-backdrop_open"></div>

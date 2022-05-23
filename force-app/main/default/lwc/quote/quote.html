@@ -1,0 +1,113 @@
+<template>
+    <lightning-card title="Quote" custom-icon="custom:icon13">
+        <div class="slds slds-p-horizontal--medium">
+         
+          
+      <!--   <span><strong>  
+             <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="text" label="Enter Quote Name" onchange={nameChangedHandler}></lightning-input>
+            <lightning-input type="text" label="Description" onchange={descriptionChangedHandler}></lightning-input>
+            <lightning-input type="date" label="Expiration Date" onchange={expDateChangedHandler}></lightning-input>
+            <div></div>
+            </div> 
+       </strong></span><br/> -->
+         
+       <h3><strong><span style="color:brown;">{dataNotFound}</span></strong></h3><br/>
+
+           <h2 class="slds-m-bottom--x-small" style="color:darkslateblue; font-weight:bold;">Displaying Products</h2>
+           <table class="slds-table slds-table_cell-buffer slds-table_bordered" border="1" cellspacing="10" cellpadding="0" style="border-collapse:collapse;">
+               <thead>
+                   <tr>
+                       <th>Product Name</th>
+                       <th>Quantity</th>
+                       <th>Sales Price</th>
+                       <th>Total Price</th>
+                       <th width="5%"></th>
+                   </tr>
+               </thead>
+               <tbody>
+                   <template for:each={getProd.data} for:item="proItem">
+                       <tr key={proItem.Id}>
+                           <td>{proItem.Product2.Name}</td>
+                           <td>{proItem.Quantity}</td>
+                           <td>{proItem.UnitPrice}</td>
+                           <td>{proItem.Subtotal}</td>
+                           <td width="5%">
+                             <div style="position:relative; left: 7px;">
+                                                                                
+                                <lightning-button 
+                                  variant='brand' 
+                                  size='medium'
+                                  onclick={handleProdDup} 
+                                  value={proItem.Id} 
+                                  icon-name="utility:copy" 
+                                  icon-position="center"
+                                  title='Duplicate' 
+                                  label="Duplicate"
+                                  >
+   
+                                </lightning-button>                                                        
+                    <span>{espace}</span>
+                    
+                    <lightning-button 
+                      variant="destructive" 
+                      onclick={handleProdDelete} 
+                      value={proItem.Id}
+                      title="Remove" 
+                      label="Remove"
+                      icon-name="utility:delete" 
+                      icon-position="right" 
+                      class="slds-m-left_x-small">
+                  </lightning-button>
+                                                                               
+                               </div>
+                           </td>                           
+                       </tr>
+                   </template>
+               </tbody>
+           </table>
+
+           <br><br>          
+        <table class="slds-table slds-table_cell-buffer table2 slds-table_bordered" border="1" cellspacing="10" cellpadding="0" style="border-collapse:collapse; width:45%">
+        <thead>
+            <tr>
+                <th>Total Price</th>
+                <th>Discount(%)</th>
+                <th>Total Price ( After Discount )</th>               
+            </tr>
+        </thead>
+        <tbody>           
+            <td style="font-size:20px;">{res}</td>
+            <td> 
+                <input type="number" class="Discount" name="quantity"  min ="0" max="100" step="10" value={discount} onchange={discountChangedHandler}>
+            </td>
+            <td width="5%"> <!-- <lightning-input type="text" value={afterDis}></lightning-input> -->
+                 <span class="afterDis">{afterDis}</span>
+                     <span class="calcul">                                                    
+                            <lightning-icon                                
+                               icon-name='custom:custom17' 
+                               alternative-text='Calculate'                        
+                               size='medium' 
+                               title='Calculate'> 
+                            </lightning-icon>                        
+                     </span>               
+            </td>            
+        </tbody>
+        </table>                  
+        </div>
+<!-- <lightning-button class="confirm" onclick={updateDiscount}>Confirm the discount</lightning-button> -->
+
+ <br/><br/>
+   <lightning-button 
+      variant="brand" 
+      label="Confirm the discount" 
+      title="Confirm the discount" 
+      icon-name="action:check" 
+      onclick={updateDiscount}
+      icon-position="left" 
+      class="slds-m-left_x-small Confirm">
+    </lightning-button> 
+    <br/><br/>
+                                 
+    </lightning-card>
+</template>

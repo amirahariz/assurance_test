@@ -25,18 +25,18 @@ export default class PackPopup extends LightningElement {
         this.showModal = false;
     }
 
-    nameField = NAME_FIELD;
+   /* nameField = NAME_FIELD;
     descriptionField = DESCRIPTION_FIELD;
-    garantiesField = GARANTIES_FIELD;
+    garantiesField = GARANTIES_FIELD;*/
     imageField = IMAGE_FIELD;
     
 
 
     recordId;
 
-    packName;
+   /* packName;
     packDescription;
-    packGaranties;
+    packGaranties;*/
     
     
     packImage;
@@ -56,9 +56,9 @@ export default class PackPopup extends LightningElement {
     handleRecordLoaded(event) {
         const { records } = event.detail;
         const recordData = records[this.recordId];
-        this.packName = getFieldValue(recordData, NAME_FIELD);
+        /*this.packName = getFieldValue(recordData, NAME_FIELD);
         this.packDescription = getFieldValue(recordData, DESCRIPTION_FIELD);
-        this.packGaranties = getFieldValue(recordData, GARANTIES_FIELD);
+        this.packGaranties = getFieldValue(recordData, GARANTIES_FIELD);*/
         this.packImage = getFieldValue(recordData, IMAGE_FIELD);
     
 
